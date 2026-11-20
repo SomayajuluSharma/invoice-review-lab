@@ -1,0 +1,50 @@
+{
+  "valid_single_credit": {
+    "credit_record_id": "CN_RECORD",
+    "approved": false,
+    "payment_authorized": false,
+    "scope": "SINGLE_CREDIT_FICTIONAL_PREVIEW",
+    "status": "LINK_PROPOSAL_REQUIRES_REVIEW",
+    "invoice_record_id": "INV_RECORD",
+    "invoice_number": "INV-1042",
+    "reference_supplied": "INV-1042",
+    "supplier_id": "SUP-001",
+    "currency": "INR",
+    "invoice_amount": "10000.00",
+    "credit_amount": "2000.00",
+    "illustrative_difference": "8000.00",
+    "caveat": "Not an open balance. Ignores tax, payments and earlier credits."
+  },
+  "resend_unresolved": {
+    "credit_record_id": "CN_RECORD",
+    "approved": false,
+    "payment_authorized": false,
+    "scope": "SINGLE_CREDIT_FICTIONAL_PREVIEW",
+    "status": "NEEDS_REVIEW",
+    "reason": "AMBIGUOUS_REFERENCE_RESOLVE_RESENDS_FIRST"
+  },
+  "missing_reference": {
+    "credit_record_id": "CN_RECORD",
+    "approved": false,
+    "payment_authorized": false,
+    "scope": "SINGLE_CREDIT_FICTIONAL_PREVIEW",
+    "status": "NEEDS_REVIEW",
+    "reason": "MISSING_REFERENCE"
+  },
+  "different_supplier": {
+    "credit_record_id": "CN_RECORD",
+    "approved": false,
+    "payment_authorized": false,
+    "scope": "SINGLE_CREDIT_FICTIONAL_PREVIEW",
+    "status": "NEEDS_REVIEW",
+    "reason": "NO_SAME_SUPPLIER_CURRENCY_REFERENCE_MATCH"
+  },
+  "different_currency": {
+    "credit_record_id": "CN_RECORD",
+    "approved": false,
+    "payment_authorized": false,
+    "scope": "SINGLE_CREDIT_FICTIONAL_PREVIEW",
+    "status": "NEEDS_REVIEW",
+    "reason": "NO_SAME_SUPPLIER_CURRENCY_REFERENCE_MATCH"
+  }
+}

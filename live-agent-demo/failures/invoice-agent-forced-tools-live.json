@@ -1,0 +1,290 @@
+{
+  "mode": "LIVE_MODEL_FAILED",
+  "error": "Model request failed with HTTP 400: output_parse_failed Parsing failed. The model generated output that could not be parsed. Please adjust your prompt. See 'failed_generation' for more details.",
+  "trace": [
+    {
+      "agent": "ExtractionAgent",
+      "tool": "read_document",
+      "arguments": {
+        "document_id": "invoice"
+      },
+      "result": {
+        "document_id": "invoice",
+        "text": "FICTIONAL DEMO ONLY\nDocument type: Invoice\nSupplier: Acme Traders\nInvoice number: INV-1042\nCurrency: INR\nTotal: 10000.00"
+      }
+    },
+    {
+      "agent": "ExtractionAgent",
+      "tool": "read_document",
+      "arguments": {
+        "document_id": "credit"
+      },
+      "result": {
+        "document_id": "credit",
+        "text": "FICTIONAL DEMO ONLY\nDocument type: Credit note\nSupplier: Acme Traders\nCredit note number: CN-88\nOriginal invoice: INV-1042\nCurrency: INR\nCredit amount: 2000.00"
+      }
+    },
+    {
+      "agent": "ExtractionAgent",
+      "tool": "submit_result",
+      "arguments": {
+        "records": [
+          {
+            "document_id": "invoice",
+            "fields": {
+              "amount": {
+                "quote": "Total: 10000.00",
+                "value": "10000.00"
+              },
+              "currency": {
+                "quote": "Currency: INR",
+                "value": "INR"
+              },
+              "document_number": {
+                "quote": "Invoice number: INV-1042",
+                "value": "INV-1042"
+              },
+              "document_type": {
+                "quote": "Document type: Invoice",
+                "value": "Invoice"
+              },
+              "original_invoice": {
+                "quote": null,
+                "value": null
+              },
+              "supplier": {
+                "quote": "Supplier: Acme Traders",
+                "value": "Acme Traders"
+              }
+            }
+          },
+          {
+            "document_id": "credit",
+            "fields": {
+              "amount": {
+                "quote": "Credit amount: 2000.00",
+                "value": "2000.00"
+              },
+              "currency": {
+                "quote": "Currency: INR",
+                "value": "INR"
+              },
+              "document_number": {
+                "quote": "Credit note number: CN-88",
+                "value": "CN-88"
+              },
+              "document_type": {
+                "quote": "Document type: Credit note",
+                "value": "Credit note"
+              },
+              "original_invoice": {
+                "quote": "Original invoice: INV-1042",
+                "value": "INV-1042"
+              },
+              "supplier": {
+                "quote": "Supplier: Acme Traders",
+                "value": "Acme Traders"
+              }
+            }
+          }
+        ]
+      },
+      "result": [
+        {
+          "document_id": "invoice",
+          "fields": {
+            "amount": {
+              "quote": "Total: 10000.00",
+              "value": "10000.00"
+            },
+            "currency": {
+              "quote": "Currency: INR",
+              "value": "INR"
+            },
+            "document_number": {
+              "quote": "Invoice number: INV-1042",
+              "value": "INV-1042"
+            },
+            "document_type": {
+              "quote": "Document type: Invoice",
+              "value": "Invoice"
+            },
+            "original_invoice": {
+              "quote": null,
+              "value": null
+            },
+            "supplier": {
+              "quote": "Supplier: Acme Traders",
+              "value": "Acme Traders"
+            }
+          }
+        },
+        {
+          "document_id": "credit",
+          "fields": {
+            "amount": {
+              "quote": "Credit amount: 2000.00",
+              "value": "2000.00"
+            },
+            "currency": {
+              "quote": "Currency: INR",
+              "value": "INR"
+            },
+            "document_number": {
+              "quote": "Credit note number: CN-88",
+              "value": "CN-88"
+            },
+            "document_type": {
+              "quote": "Document type: Credit note",
+              "value": "Credit note"
+            },
+            "original_invoice": {
+              "quote": "Original invoice: INV-1042",
+              "value": "INV-1042"
+            },
+            "supplier": {
+              "quote": "Supplier: Acme Traders",
+              "value": "Acme Traders"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "agent": "ReferenceAgent",
+      "tool": "check_reference",
+      "arguments": {
+        "credit_document_id": "credit",
+        "invoice_document_id": "invoice"
+      },
+      "result": {
+        "credit_document_id": "credit",
+        "invoice_document_id": "invoice",
+        "checks": {
+          "credit_type": true,
+          "invoice_type": true,
+          "supplier_equal": true,
+          "currency_equal": true,
+          "reference_equal": true
+        },
+        "proposal_supported": true,
+        "human_review_required": true,
+        "payment_authorized": false
+      }
+    },
+    {
+      "agent": "ReferenceAgent",
+      "tool": "submit_result",
+      "arguments": {
+        "credit_document_id": "credit",
+        "invoice_document_id": "invoice"
+      },
+      "result": {
+        "credit_document_id": "credit",
+        "invoice_document_id": "invoice",
+        "checks": {
+          "credit_type": true,
+          "invoice_type": true,
+          "supplier_equal": true,
+          "currency_equal": true,
+          "reference_equal": true
+        },
+        "proposal_supported": true,
+        "human_review_required": true,
+        "payment_authorized": false
+      }
+    },
+    {
+      "agent": "ExceptionSummaryAgent",
+      "tool": "get_review_packet",
+      "arguments": {},
+      "result": {
+        "extracted_records": [
+          {
+            "document_id": "invoice",
+            "fields": {
+              "amount": {
+                "quote": "Total: 10000.00",
+                "value": "10000.00"
+              },
+              "currency": {
+                "quote": "Currency: INR",
+                "value": "INR"
+              },
+              "document_number": {
+                "quote": "Invoice number: INV-1042",
+                "value": "INV-1042"
+              },
+              "document_type": {
+                "quote": "Document type: Invoice",
+                "value": "Invoice"
+              },
+              "original_invoice": {
+                "quote": null,
+                "value": null
+              },
+              "supplier": {
+                "quote": "Supplier: Acme Traders",
+                "value": "Acme Traders"
+              }
+            }
+          },
+          {
+            "document_id": "credit",
+            "fields": {
+              "amount": {
+                "quote": "Credit amount: 2000.00",
+                "value": "2000.00"
+              },
+              "currency": {
+                "quote": "Currency: INR",
+                "value": "INR"
+              },
+              "document_number": {
+                "quote": "Credit note number: CN-88",
+                "value": "CN-88"
+              },
+              "document_type": {
+                "quote": "Document type: Credit note",
+                "value": "Credit note"
+              },
+              "original_invoice": {
+                "quote": "Original invoice: INV-1042",
+                "value": "INV-1042"
+              },
+              "supplier": {
+                "quote": "Supplier: Acme Traders",
+                "value": "Acme Traders"
+              }
+            }
+          }
+        ],
+        "reference_check": {
+          "credit_document_id": "credit",
+          "invoice_document_id": "invoice",
+          "checks": {
+            "credit_type": true,
+            "invoice_type": true,
+            "supplier_equal": true,
+            "currency_equal": true,
+            "reference_equal": true
+          },
+          "proposal_supported": true,
+          "human_review_required": true,
+          "payment_authorized": false
+        },
+        "limitations": [
+          "fictional text only",
+          "exact supplier/reference comparison only",
+          "no OCR",
+          "no outstanding balance",
+          "no ledger or payment actions"
+        ]
+      }
+    }
+  ],
+  "usage": {
+    "requests": 7,
+    "total_tokens": 3379
+  }
+}

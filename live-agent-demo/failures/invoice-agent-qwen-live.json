@@ -1,0 +1,32 @@
+{
+  "mode": "LIVE_MODEL_FAILED",
+  "error": "Model request failed with HTTP 429: rate_limit_exceeded Request too large for model `qwen/qwen3.8-27b` in organization `[org-id-redacted]` service tier `on_demand` on output tokens per minute (OTPM): Limit 1000, Requested 1013. The request's expected output tokens exceed the enforced limit; reduce max_tokens (or the request's expected output) and try again. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing",
+  "trace": [
+    {
+      "agent": "ExtractionAgent",
+      "tool": "read_document",
+      "arguments": {
+        "document_id": "invoice"
+      },
+      "result": {
+        "document_id": "invoice",
+        "text": "FICTIONAL DEMO ONLY\nDocument type: Invoice\nSupplier: Acme Traders\nInvoice number: INV-1042\nCurrency: INR\nTotal: 10000.00"
+      }
+    },
+    {
+      "agent": "ExtractionAgent",
+      "tool": "read_document",
+      "arguments": {
+        "document_id": "credit"
+      },
+      "result": {
+        "document_id": "credit",
+        "text": "FICTIONAL DEMO ONLY\nDocument type: Credit note\nSupplier: Acme Traders\nCredit note number: CN-88\nOriginal invoice: INV-1042\nCurrency: INR\nCredit amount: 2000.00"
+      }
+    }
+  ],
+  "usage": {
+    "requests": 3,
+    "total_tokens": 951
+  }
+}

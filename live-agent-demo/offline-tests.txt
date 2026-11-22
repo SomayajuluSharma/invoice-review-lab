@@ -1,0 +1,14 @@
+test_explicit_offline_mode_and_handoffs (test_agent_demo.Tests) ... ok
+test_fabricated_quote_rejected (test_agent_demo.Tests) ... ok
+test_global_network_call_bound_without_request (test_agent_demo.Tests) ... ok
+test_link_requires_validation_tool (test_agent_demo.Tests) ... ok
+test_mismatch_never_becomes_supported (test_agent_demo.Tests) ... ok
+test_nested_extraction_schema (test_agent_demo.Tests) ... ok
+test_plain_text_not_false_success (test_agent_demo.Tests) ... ok
+test_summary_requires_packet (test_agent_demo.Tests) ... ok
+test_unknown_tool_rejected (test_agent_demo.Tests) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.002s
+
+OK

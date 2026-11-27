@@ -1,0 +1,15 @@
+test_credit_exceeds_invoice_blocks (test_autopilot.Tests) ... ok
+test_early_submit_rejected_then_recovers (test_autopilot.Tests) ... ok
+test_fabricated_quote_rejected (test_autopilot.Tests) ... ok
+test_full_inbox_routes_to_review (test_autopilot.Tests) ... ok
+test_global_request_bound_without_network (test_autopilot.Tests) ... ok
+test_payment_attempt_always_refused (test_autopilot.Tests) ... ok
+test_small_inbox_auto_completes (test_autopilot.Tests) ... ok
+test_turn_bound (test_autopilot.Tests) ... ok
+test_unknown_tool_rejected (test_autopilot.Tests) ... ok
+test_wrong_total_rejected (test_autopilot.Tests) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.005s
+
+OK
